@@ -1,0 +1,152 @@
+.lang_reg > span > a {
+	color: #525252;
+	font-size: 92%;
+}
+
+.lang_reg > span > a:hover {
+	color: #82AC40;
+}
+
+#ha-header .container {
+    padding: 15px 12px 20px 12px;
+}
+
+.call_reg_popup {
+	text-align: center;
+	padding: 10px 10px 18px 10px;
+}
+
+.call_reg_popup a {
+    padding: 5px 17px;
+    border: 2px solid #80a742;
+    border-radius: 30px;
+    color: #80a742;
+    font-size: 96%;
+    display: inline-block;
+}
+
+.call_reg_popup a:hover {
+	background-color: #80a742;
+	color: white;
+}
+
+#formReg input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    float: left;
+}
+
+#formReg input[type="checkbox"]:hover {
+    cursor: pointer;
+}
+
+#formReg input[type="checkbox"]:focus {
+    box-shadow: none;
+}
+
+#formReg a {
+	color: #789d3e;
+    font-weight: 400;
+    font-size: 87%;
+    display: block;
+    line-height: 18px;
+    margin-left: 40px;
+}
+
+
+#formReg a:hover {
+	text-decoration: underline;
+}
+
+.reg_button_first {
+	width: auto;
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 20px;
+}
+
+select:focus {
+	box-shadow: none !important;
+}
+
+div.error{
+	color: white;
+	background: #FFaaaa;
+	font-size: 12px;
+	font-weight: normal;
+	width: 300px;
+	margin-right: 10px;
+	float: right;
+	padding: 5px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+
+#reg .comp_title{ text-align:center;}
+#reg .form-group label{
+	font-weight: 500;
+	font-size: 14px;
+}
+#reg select{
+	border: 2px solid silver;
+	width: 100%;
+	font-size: 100%;
+	border-radius: 5px;
+	background: #f7f7f7;
+	color: #555;
+}
+#reg [name^="bdate_"]{
+	width: 100px;
+	font-size: 15px;
+	float: right;
+}
+#reg [name="bdate_y"]{
+	margin-right: 10px;
+}
+.field_text{
+}
+@media (max-width:525px){
+	.field_text{
+		width: 100%;
+	}
+	#reg [name^="bdate_"]{
+		float: left;
+	}
+	#reg [name="bdate_y"]{
+		margin-right: 0px;
+	}
+
+}
+.helper_parent{
+	position: absolute;
+	right: -10px;
+}
+.helper{
+	position: relative;
+	top: -36px;
+	background: #80a742;
+	    color: white;
+	    border-radius: 50%;
+	    text-align: center;
+	    height: 30px;
+		width: 30px;
+	    padding-top: 2px;
+}
+.helper_text{
+	border-radius: 5px;
+	padding: 10px;
+	z-Index:999;
+	font-size: 13px;
+	width: 250px;
+    	position: absolute;
+    	background: #80a742;
+    	color: white;
+    	top: 0px;
+	display: none;
+}
+
+@media (max-width:525px){
+	.helper_parent{
+		right: 110px;
+	}
+}
