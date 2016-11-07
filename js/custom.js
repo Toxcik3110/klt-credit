@@ -27,7 +27,7 @@
 		});
 	}
 
-$(function(){  
+$(function(){
 
 
 	var tId = getVar('transaction_id');
@@ -81,7 +81,7 @@ $(function(){
 			text.fadeOut(200);
 		});
 		var lang = $('#js-lang').val();
-		
+
 		var languages = {
 			'ru':{
 				'required': 'Нужно заполнить поле',
@@ -103,14 +103,14 @@ $(function(){
 						return renderError( languages[lang].wrong_code, $('#formVerify'));
 					}
 					top.location='/online/account/profile?wizard#wizard';
-			
-		
+
+
 				}
 			});
 			return false;
 		});
 
-		function renderError( msg,f ){	
+		function renderError( msg,f ){
 			f.find('[type="submit"]').before('<div class=error>'+msg+'</div>');
 			f.find('[type="submit"]').parent().find('.error').css({
 				textAlign:'center',
@@ -119,8 +119,8 @@ $(function(){
 				marginBottom:'20px',
 			});
 
-			
-			
+
+
 		}
 		f.submit( function(){
 			$(this).ajaxSubmit({
@@ -156,16 +156,16 @@ $(function(){
 			var label_text = textLeft;
 
 			$(el).before('<label class=field_text>'+label_text+'</label>');
-	
+
 		});
 		f.find('[type="text"]').focus( function(){
 			$(this).parent().find('.error').remove();
 			$(this).css('background','#f7f7f7');
 
 
-			
+
 		});
-		
+
 		f.find('[type="text"]').blur( function(){
 			var v=this.value;
 
@@ -174,7 +174,7 @@ $(function(){
 				if( $(this).parent().find('.error').length>0) return;
 				$(this).css('background','#ffeeee');
 				$(this).after('<div class=error>'+languages[lang].required+'</div>');
-				return ; 
+				return ;
 			}
 			this.value = v[0].toUpperCase()+v.substring(1);
 			return true;
@@ -221,9 +221,9 @@ $(function(){
 				if(!r.status) return;
 				$(el).val('').focus();
 				$(el).after('<div class=error>'+languages[lang].tel_exists.replace('%phone%', v)+'</div>');
-				
+
 			}, 'json');
-			
+
 		});
 
 
@@ -232,35 +232,35 @@ $(function(){
 
 		f.find('[name="bdate"]').inputmask('99.99.9999');
 		f.find('[name="lastName"],[name="firstName"],[name="thirdName"]').inputmask({mask: 'rrrrrrrrrrrrrrrr', greedy: true, placeholder:''});
-		
+
 
 	})()
-	
-	
+
+
 
 	//eo reg form
 
 	// auth check
-	$.get('/online/?is_auth', function(r){
-		if(r){
-			$('.login:eq(0)').fadeOut( function(){
-				$('.login:eq(1)').text(r).fadeIn();
-				$('#about .btnCredit').click( function(){
-					top.location='/online/account'
-					return false;
-				});
-				
-			});
-		}
-	}, 'json');
+	// $.get('/online/?is_auth', function(r){
+	// 	if(r){
+	// 		$('.login:eq(0)').fadeOut( function(){
+	// 			$('.login:eq(1)').text(r).fadeIn();
+	// 			$('#about .btnCredit').click( function(){
+	// 				top.location='/online/account'
+	// 				return false;
+	// 			});
+	//
+	// 		});
+	// 	}
+	// }, 'json');
 
-  
+
 
   setTimeout(
-	  function() 
+	  function()
 	  {
 	    $('body').animate({
-	
+
 	      opacity:1
 	    });
 	  }, 00);
@@ -281,7 +281,7 @@ $(function(){
       $('link[href="/css/custom_mob.css"]').attr("href",'/css/custom_desc.css');
       $.cookie("css",'/css/custom_desc.css', {expires: 365, path: '/'});
       return false;
-  });   
+  });
 
 
   $('.ua').text('Українська');
@@ -299,7 +299,7 @@ $(function(){
         $(this).addClass('rubberBand');
       }, function() {
         $(this).removeClass('rubberBand');
-    }); 
+    });
 
   /* CSS Animation */
 
@@ -322,13 +322,13 @@ var add_credits = diff * avg_min_credits;
 function count(){
     var counter = { var: 0 };
     TweenMax.to(counter, 2, {
-      var: Math.round( start_app + add_application) , 
+      var: Math.round( start_app + add_application) ,
       onUpdate: function () {
           $('#counter').html(Math.ceil(counter.var));
       },
       onComplete: function(){
          //count();
-     },    
+     },
       ease:SlowMo.ease
   });
 }
@@ -336,17 +336,17 @@ function count(){
 function count1(){
     var counter = { var: 0 };
     TweenMax.to(counter, 2, {
-      var: Math.round( start_credits + add_credits) , 
+      var: Math.round( start_credits + add_credits) ,
       onUpdate: function () {
           $('#counter1').html(Math.ceil(counter.var));
       },
       onComplete: function(){
          //count();
-     },    
+     },
       ease:SlowMo.ease
   });
 }
-    
+
 count();
 count1();
 
@@ -364,8 +364,8 @@ count1();
   if (result) {
       $('#slider-range-money .ui-slider-handle').append('<input type/text id="money" min=2500 max=10000 step=50 value="" /><span id=overflow style="position:relative;top:-40px; left: 60px;">Можна отримати</span><span class="overflow_corner"></span>');
   } else {
-      $('#slider-range-money .ui-slider-handle').append('<input type/text id="money" min=2500 max=10000 step=50 value="" /><span id=overflow style="position:relative;top:-40px; left: 60px;">Можно получить</span><span class="overflow_corner"></span>');  
-  } 
+      $('#slider-range-money .ui-slider-handle').append('<input type/text id="money" min=2500 max=10000 step=50 value="" /><span id=overflow style="position:relative;top:-40px; left: 60px;">Можно получить</span><span class="overflow_corner"></span>');
+  }
 
   $('#slider-range-day .ui-slider-handle').append('<input type/text id="days" step=1 value="" /><span id="overdays" style="display:none;"></span><span style="display:none;" class="overflow_corner_days"></span>');
 
@@ -386,10 +386,10 @@ count1();
 	var _a = Math.min($('#slider-range-money').data('max')||2500, $.cookie('_a')||2500);
 	_a = isNaN(_a)?2500:_a;
     $("#slider-range-money").slider({
-        range: "min", 
-        value: _a, 
-        min: 500, 
-        max: $('#slider-range-money').data('max')||10000,         
+        range: "min",
+        value: _a,
+        min: 500,
+        max: $('#slider-range-money').data('max')||10000,
         step: 50,
         slide: function (event, ui) {
             $('#money').css({
@@ -398,12 +398,12 @@ count1();
             $("#money").val(ceil(ui.value));
       			var v = ceil(ui.value);
       			var creditNumber = false;
-      			var limits = [2500, 3500, 4000, 5000, 6000, 7000, 8000, 10000];			
+      			var limits = [2500, 3500, 4000, 5000, 6000, 7000, 8000, 10000];
       			var iter = 1;
-      			
+
       			for(var i in limits){
       				if (v <= limits[i] && creditNumber === false){
-      					creditNumber = iter;					
+      					creditNumber = iter;
       				}
       				iter++;
       			}
@@ -427,9 +427,9 @@ count1();
               } else {
       				  $('#overflow').html('Можно получить');
               }
-      			}			
+      			}
             update();
-        }       
+        }
     });
     $("#money").val(ceil($("#slider-range-money").slider("value")));
 
@@ -439,12 +439,12 @@ count1();
 	_d = isNaN(_d)?10:_d;
 
     $("#slider-range-day").slider({
-        range: "min", 
+        range: "min",
         value: _d,
-        min: 7, 
-        max: $('#slider-range-day').data('max')||65, 
+        min: 7,
+        max: $('#slider-range-day').data('max')||65,
         step: 1,
-        slide: function (event, ui) { 
+        slide: function (event, ui) {
             $('#days').css({
               'color':'black'
             });
@@ -452,7 +452,7 @@ count1();
             console.log(' = ' + (ui.value != 'NaN'));*/
             if (ui.value != 'NaN' && ui.value > 0) {
               $("#days").val(ui.value);
-            } 
+            }
             var days = $('#days').val();
             if (days >= 31 && days <= 65) {
               if (result) {
@@ -468,13 +468,13 @@ count1();
                 $('.overflow_corner_days').css({
                   display: 'none'
                 });
-            }        
+            }
             update();
         }
     });
 
-    $("#days").val($("#slider-range-day").slider("value"));	
-   
+    $("#days").val($("#slider-range-day").slider("value"));
+
     function update(money, day) {
         var money, day;
         money = $('#money').val();
@@ -501,7 +501,7 @@ count1();
 
 
         // $('#money').val(money);
-        // $('#days').val(day);   
+        // $('#days').val(day);
 
     }
 
@@ -516,14 +516,14 @@ count1();
         var day = d.getDate();
         if (day < 10) day = '0' + day;
         if (month < 10) month = '0' + month;
-        return day + '.' + month + '.' + year;        
+        return day + '.' + month + '.' + year;
     }
 
     update();
 
     $('input').on('click', function() {
       $(this).select();
-    });    
+    });
 
     $('input').change(function() {
       var changeMoney = $('#money').val();
@@ -557,8 +557,8 @@ count1();
           update();
           break;
         }
-      }    	
-    }); 
+      }
+    });
 
 
     var _d = new Date;
@@ -566,7 +566,7 @@ count1();
     var date = new Date();
     date.setMonth(date.getMonth() + 1);
 
-    $('#days').datepicker({      
+    $('#days').datepicker({
 
         dayNamesMin:[ 'Вс',"Пн","Вт","Ср","Чт","Пт","Сб"],
         monthNames:['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
@@ -575,7 +575,7 @@ count1();
         start_date: _dd,
         maxDate: + 31,
         minDate: + 8,
-        onSelect: function(v,e){  
+        onSelect: function(v,e){
           $('#days').css({
             'color':'black'
           });
@@ -597,7 +597,7 @@ count1();
           // $('#days').val(diff);
           $('#slider-range-day').slider('value', diff);
           var hs = $('#slider-range-day').slider();
-          hs.slider('option','slide').call(hs, null, { handle: $('#slider-range-day', hs), value: diff});          
+          hs.slider('option','slide').call(hs, null, { handle: $('#slider-range-day', hs), value: diff});
           // update
         }
 
@@ -610,7 +610,7 @@ count1();
       format: 'Y-m-d',
       start_date: _dd,
       months: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
-      onSelect: function(v,e){  
+      onSelect: function(v,e){
         var diff = new Date($(this).val());
 //        console.log(diff);
         diff-=(new Date()) ;
@@ -622,14 +622,14 @@ count1();
         $('#slider-range-day').slider('value',diff);
         var hs = $('#slider-range-day').slider();
         hs.slider('option','slide').call(hs, null, { handle: $('#slider-range-day', hs), value: diff});
-        
-    
+
+
       }
     });
 */
-    
 
- 
+
+
     $('#dayD').change( function(){
 //      console.log( $(this).val());
     });
@@ -663,9 +663,9 @@ count1();
 
 
   $('.pp').click( function() {
-        if ((parseInt($('#money').val()) == '500' && $(this).hasClass('minus')) 
-          || (parseInt($('#money').val()) == '10000' && $(this).hasClass('plus'))) { 
-          return false; 
+        if ((parseInt($('#money').val()) == '500' && $(this).hasClass('minus'))
+          || (parseInt($('#money').val()) == '10000' && $(this).hasClass('plus'))) {
+          return false;
         } else {
           var value = parseInt( $('#'+$(this).data('target')).slider('value') );
           var hs = $('#'+$(this).data('target')).slider();
@@ -680,13 +680,13 @@ count1();
             'color':'black'
           });
           return false;
-        }                       
-    }); 
+        }
+    });
 
     $('.pp_date').click( function() {
-        if ((parseInt($('#days').val()) == '7' && $(this).hasClass('minus')) 
-          || (parseInt($('#days').val()) == '30' && $(this).hasClass('plus'))) { 
-          return false; 
+        if ((parseInt($('#days').val()) == '7' && $(this).hasClass('minus'))
+          || (parseInt($('#days').val()) == '30' && $(this).hasClass('plus'))) {
+          return false;
         } else {
           var value = parseInt( $('#'+$(this).data('target')).slider('value') );
           var hs = $('#'+$(this).data('target')).slider();
@@ -701,8 +701,8 @@ count1();
             'color':'black'
           });
           return false;
-        }                       
-    }); 
+        }
+    });
 
     $('#to_top').click(function() {
 
@@ -713,14 +713,14 @@ count1();
 
         return false;
     });
-  
-    /*******Nice Scroll******/    
+
+    /*******Nice Scroll******/
     //$("html").niceScroll();  // The document page (body)
   //$(".scroller").getNiceScroll().resize()
 
      if( $(document).innerWidth() < 400){
 		$('.flex-caption').hide();
-	} 
+	}
      $('.flexslider').flexslider({
             animation: "fade",
             controlNav: false,
@@ -758,14 +758,14 @@ count1();
       });
 
 
-    /***Hover Effect with mask**/   
+    /***Hover Effect with mask**/
     $('span.mask').hover(
         function () {
           $(this).siblings('a img').addClass('hovering');
           $(this).parent().siblings(".portfolio-title").children("h4").stop().animate({
               top: -20
             }, 350);
-        }, 
+        },
         function () {
           $(this).siblings('a img').removeClass('hovering');
           $(this).parent().siblings(".portfolio-title").children("h4").stop().animate({
@@ -773,10 +773,10 @@ count1();
             }, 350);
         }
   );
-  
-      
+
+
         $('a[href*="#"]:not([href="#"])').click(function() {
-          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
             || location.hostname == this.hostname) {
 
             var target = $(this.hash);
@@ -788,9 +788,9 @@ count1();
               return false;
             }
           }
-        });     
-    
-   
+        });
+
+
   $('.get_cre, .cre_its a:eq(0)').click(function(){
 
     var windowWidth = $(window).width();
@@ -808,7 +808,7 @@ count1();
       }, 500);
 
     }
-    
+
 
     $('.credit_box li').css('visibility','hidden');
     $('.credit_box #ans1').css('visibility','hidden');
@@ -853,7 +853,7 @@ $('.pay_cre, .cre_its a:eq(1)').click(function(){
       //tl.fromTo(ss, 1, {top:-288, height:0}, {top:'50%', height:288, ease:Power2.easeOut}, '-=0.3')
       tl.to(ss.find('#ans2'), 0.6, {autoAlpha:1}, 0.1);
       tl.staggerFrom(ss.find('li'), 1.6, {autoAlpha:0, scale:1.5, ease:Elastic.easeOut}, 0.1)
-      
+
      },1000);
 
    return false;
@@ -869,8 +869,8 @@ $('.pay_cre, .cre_its a:eq(1)').click(function(){
       scrollTop: ($("#pay_cre").offset().top - 74)
     }, 500);
   });*/
-   
- 
+
+
       /*$('.partners a').attr('id', function (i) {
         return 'par_' + (i + 1);
       });*/
@@ -878,8 +878,8 @@ $('.pay_cre, .cre_its a:eq(1)').click(function(){
        $('#anim_cre ul li').attr('id', function (i) {
         return 'part_' + (i + 1);
       });
-  
-        
+
+
     /*****google map*****/
 
 });
@@ -907,14 +907,14 @@ $(window).scroll(function(){
 
 
 
-    //alert(2);
+    // alert(2);
 
-        
+
     if($(document).scrollTop() > 100){
-           
-         
+
+
                 $('#ha-header').addClass('test');
-               
+
                 $('#ha-header').stop().animate({
                     opacity:0.9
                 },100);
@@ -922,14 +922,14 @@ $(window).scroll(function(){
                 $('.cre_its ul li:first-child a').css({
                     'background':'#82AC40',
                     'color':'white'
-                },100);             
-          
-          
-          
-           
+                },100);
+
+
+
+
         } else if($(document).scrollTop() < 100) {
-            
-        
+
+
                $('#ha-header').stop().animate({
                     opacity:1
                 },100);
@@ -937,12 +937,12 @@ $(window).scroll(function(){
                $('.cre_its ul li:first-child a').css({
                     'background':'none',
                     'color':'#15639d'
-                },100);        
-          
-          
-          
+                },100);
+
+
+
         }
-      
+
       if($(document).scrollTop() > 600){
           $('#to_top').stop().animate({
                     opacity:1
@@ -950,26 +950,28 @@ $(window).scroll(function(){
       }
 
       else if($(document).scrollTop() < 600) {
-            
+
           //$('#logo').hide();
-                
-          
+
+
                $('#to_top').stop().animate({
                     opacity:0
-                },100);          
-          
-        }  
-		
+                },100);
+
+        }
+
 		var bottomContacts = $('.bottom_contacts');
 		var scrolling = $(document).scrollTop();
 		var tl = new TimelineLite();
+		console.log(scrolling);
 
-		if (scrolling>5700) {
+
+		if (scrolling>5200) {
 		  tl.to(bottomContacts, 0.4, {opacity: 0.2, bottom: -50});
 		} else{
 		  tl.to(bottomContacts, 0.4, {opacity: 1, bottom: 0});
 		}
-  
+
 });
 
 /***** random photo in landings *****/
@@ -984,7 +986,7 @@ randomPhoto(1, 12);
 /***** /random photo in landings *****/
 
 
-$(document).ready(function() { 
+$(document).ready(function() {
 
     $('footer .boxi img.animated, .mob_version_button.animated, .inv_friend_button.animated').hover(function() {
         $(this).addClass('pulse');
@@ -992,15 +994,15 @@ $(document).ready(function() {
         $(this).removeClass('pulse');
     });
 
-    $("#accordion, #accordion1, #accordion2, #accordion3, #accordion4").accordion({ 
-      collapsible: true, 
+    $("#accordion, #accordion1, #accordion2, #accordion3, #accordion4").accordion({
+      collapsible: true,
       active: false,
       heightStyle: "content"
     });
 
     $('#modal').modal();
 
-    if(window.location.hash == '#get_cre') {   
+    if(window.location.hash == '#get_cre') {
       $('html, body').delay(200).animate({ scrollTop: ($("#get_cre").offset().top - 88)}, 500);
     }
 
@@ -1047,7 +1049,7 @@ $(window).load(function(){
                 scrollTop: ($("#get_cre").offset().top - 73)
               }, 200);
 
-            }          
+            }
 
       },100);
 
@@ -1062,8 +1064,8 @@ $(window).load(function(){
         tl.staggerFrom(ss.find('li'), 1.6, {autoAlpha:0, scale:1.5, ease:Elastic.easeOut}, 0.2)
         tl.to(ss.find('#ans1'), 1.6, {autoAlpha:1}, 1);
        },1200);
-    
-      
+
+
     } else if(hashi == '#top2'){
       setTimeout(function(){
           var windowWidth = $(window).width();
@@ -1093,7 +1095,7 @@ $(window).load(function(){
         //tl.fromTo(ss, 1, {top:-288, height:0}, {top:'50%', height:288, ease:Power2.easeOut}, '-=0.3')
         tl.to(ss.find('#ans2'), 0.6, {autoAlpha:1}, 0.1);
         tl.staggerFrom(ss.find('li'), 1.6, {autoAlpha:0, scale:1.5, ease:Elastic.easeOut}, 0.1)
-        
+
        },1100);
 
 
@@ -1102,7 +1104,7 @@ $(window).load(function(){
     $('#flexi').animate({
       opacity:1
     })
- 
+
 
   $('.flexsliders').flexslider({
     animation: "slide",
@@ -1148,7 +1150,7 @@ $(function () {
         }
 	phone.val( phone_val );
         return true;
-	
+
     })
 
 })
