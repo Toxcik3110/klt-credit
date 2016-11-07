@@ -677,6 +677,7 @@ div.ui-datepicker-title span.ui-datepicker-year {
     background-repeat: no-repeat;
     background-position: center;
     width: 230px;
+    background-size: 100% 100%;
     /*text-align:center;
     padding-top:25px;
     padding-bottom:25px;
@@ -2868,7 +2869,7 @@ footer .part.three div:last-child img, footer .part.three div:last-child span {
     background-repeat: no-repeat;
     background-position: 0px 10px;
     margin: 20px 0px;
-    padding: 8px 0px 3px 40px;
+    padding: 8px 0px 8px 40px;
     font-weight: 500;
     font-size: 120%;
 }
