@@ -2,8 +2,8 @@
                        Global Styles
 ============================================================= */
 
-html { font-size: 80% }
-body { color: #2B2A29; font-family: 'HelveticaNeueCyr'; font-size: 13pt font-weight: 300; line-height: 1.5; opacity: 1; }
+html { font-size: 85% }
+body { color: #2B2A29; font-family: 'HelveticaNeueCyr'; font-size: 14pt; font-weight: 300; line-height: 1.5; opacity: 1; }
 
 .container {
     width: 1170px;
@@ -759,7 +759,7 @@ div.ui-datepicker-title span.ui-datepicker-year {
     background: -webkit-linear-gradient(-45deg, #e2eff3 0%,#f5f5f5 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(135deg, #e2eff3 0%,#f5f5f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2eff3', endColorstr='#f5f5f5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-    height: 640px;
+    
 }
 
 .about_inner {
@@ -1773,7 +1773,7 @@ footer {
     background: -webkit-linear-gradient(135deg, #8bb14f 0%,#6c9033 92%);
     background: linear-gradient(135deg, #8bb14f 0%,#6c9033 92%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8bb14f', endColorstr='#6c9033',GradientType=1 );
-    min-height: 364px;
+    
     /*padding-top: 20px;*/
 
     background: #ebecec;
@@ -1822,7 +1822,7 @@ footer .boxi img {width: auto;}
 
 footer .part {
     float:left;
-    height:364px;
+    height: 121px;
     padding-left: 17px;
     padding-right: 23px;
 }
@@ -1838,7 +1838,7 @@ footer .part.one p a {
 }
 footer .part.one a {
   display:block;
-  margin-right:12px;
+  margin-right:1px;
 }
 footer .part.one span {
     display:block;
@@ -1895,7 +1895,6 @@ footer .part.two {
 }
 
 .inv_friend {
-    background: #FFD32F;
     max-width: 428px;
     display: inline-block;
     border-radius: 100px;
@@ -1904,7 +1903,7 @@ footer .part.two {
 
 .inv_friend a {
     padding: 10px 14px 8px 14px;
-    background: #89b149;
+    background: #FFD32F;
     color: white !important;
     border-radius: 50px;
     font-size: 85%;
@@ -1918,7 +1917,7 @@ footer .part.two {
 }
 
 .inv_friend span {
-    font-size: 94%;
+    font-size: 16px;
     position: relative;
     top: 14px;
     font-weight: 400;
@@ -1940,7 +1939,7 @@ footer .part.two {
 }
 
 .bottom_social a {
-  margin-left: 25px;
+  margin-left: 0px;
 }
 
 .bottom_social a:first-child {
@@ -1949,8 +1948,8 @@ footer .part.two {
 
 footer .part.two a {
   color:#fff;
-  padding-left:4px;
   font-size:17px;
+  margin-top: 25px;
 }
 
 footer .part.two a:hover {
@@ -1959,7 +1958,7 @@ footer .part.two a:hover {
 
 footer .part.three {
   vertical-align: middle;
-  padding-left: 51px;
+  padding-left: 31px;
 }
 
 
@@ -1992,7 +1991,9 @@ footer .part.three div:last-child img, footer .part.three div:last-child span {
 .part a {
   color: #2B2A29;
 }
-
+.copyright {
+  margin-top: 5px;
+}
 .mob_copyright {
   display: none;
 }
@@ -3412,17 +3413,9 @@ padding: 9px 14px 9px 14px;
     padding: 267px 20px 40px 20px !important;
 }
 
-.first_tel {
+.first_tel, .second_tel {
     display: inline-block;
-    font-size: 27px;
-    vertical-align: middle;
-    padding-right: 14px;
-    font-family: 'fira_sansmedium';
-}
-
-.second_tel {
-    display: inline-block;
-    font-size: 27px;
+    font-size: 19px;
     vertical-align: middle;
     padding-right: 14px;
     font-family: 'fira_sansmedium';

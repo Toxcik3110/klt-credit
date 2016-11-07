@@ -1,4 +1,4 @@
-	var map;
+﻿	var map;
 	function generateUUID() {
 	    var d = new Date().getTime();
 	    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -966,7 +966,7 @@ $(window).scroll(function(){
 		console.log(scrolling);
 
 
-		if (scrolling>5200) {
+		if (scrolling>2700) {
 		  tl.to(bottomContacts, 0.4, {opacity: 0.2, bottom: -50});
 		} else{
 		  tl.to(bottomContacts, 0.4, {opacity: 1, bottom: 0});
