@@ -966,7 +966,7 @@ $(window).scroll(function(){
 		console.log(scrolling);
 
 
-		if (scrolling>2700) {
+		if (scrolling>1700) {
 		  tl.to(bottomContacts, 0.4, {opacity: 0.2, bottom: -50});
 		} else{
 		  tl.to(bottomContacts, 0.4, {opacity: 1, bottom: 0});
