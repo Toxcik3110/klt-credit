@@ -1,4 +1,11 @@
 ﻿	var map;
+function getOffset(el) {
+  el = el.getBoundingClientRect();
+
+  return (el.left + +window.scrollY);
+	//   top: el.top + window.scrollY
+  // }
+}
 	function generateUUID() {
 	    var d = new Date().getTime();
 	    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -963,10 +970,9 @@ $(window).scroll(function(){
 		var bottomContacts = $('.bottom_contacts');
 		var scrolling = $(document).scrollTop();
 		var tl = new TimelineLite();
-		console.log(scrolling);
+		console.log( +window.innerHeight , getOffset(document.getElementsByClassName("boxi")[0]));
 
-
-		if (scrolling>1700) {
+		if (scrolling>(+window.innerHeight)*2) {
 		  tl.to(bottomContacts, 0.4, {opacity: 0.2, bottom: -50});
 		} else{
 		  tl.to(bottomContacts, 0.4, {opacity: 1, bottom: 0});
