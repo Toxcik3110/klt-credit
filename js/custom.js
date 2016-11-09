@@ -972,9 +972,11 @@ $(window).scroll(function(){
 		var tl = new TimelineLite();
 		console.log( +window.innerHeight , getOffset(document.getElementsByClassName("boxi")[0]));
 
-		if (scrolling>(+window.innerHeight)) {
+		if (scrolling>(+window.innerHeight)*1.5) {
 		  tl.to(bottomContacts, 0.4, {opacity: 0.2, bottom: -50});
-		} else{
+      } else if(scrolling<(+window.innerHeight)/2){
+		  tl.to(bottomContacts, 0.4, {opacity: 0.2, bottom: -50});
+		}else{
 		  tl.to(bottomContacts, 0.4, {opacity: 1, bottom: 0});
 		}
 
