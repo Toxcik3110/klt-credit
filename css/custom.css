@@ -759,7 +759,7 @@ div.ui-datepicker-title span.ui-datepicker-year {
     background: -webkit-linear-gradient(-45deg, #e2eff3 0%,#f5f5f5 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(135deg, #e2eff3 0%,#f5f5f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2eff3', endColorstr='#f5f5f5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-    
+
 }
 
 .about_inner {
@@ -1773,7 +1773,7 @@ footer {
     background: -webkit-linear-gradient(135deg, #8bb14f 0%,#6c9033 92%);
     background: linear-gradient(135deg, #8bb14f 0%,#6c9033 92%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8bb14f', endColorstr='#6c9033',GradientType=1 );
-    
+
     /*padding-top: 20px;*/
 
     background: #ebecec;
@@ -1822,7 +1822,7 @@ footer .boxi img {width: auto;}
 
 footer .part {
     float:left;
-    height: 121px;
+    height: 150px;
     padding-left: 17px;
     padding-right: 23px;
 }
